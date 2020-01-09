@@ -19,6 +19,7 @@ import com.example.moviedbapp.model.Result;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MovieDetailFragment extends Fragment {
 
@@ -33,6 +34,10 @@ public class MovieDetailFragment extends Fragment {
 
     @BindView(R.id.detail_movie_overview_textview)
     TextView detailMovieOverview;
+
+    @BindView(R.id.close_icon_imageview)
+    ImageView closeFragmentIcon;
+
 
     @Nullable
     @Override
@@ -64,5 +69,16 @@ public class MovieDetailFragment extends Fragment {
         detailReleaseDate.setText(myResult.getReleaseDate());
         detailMovieOverview.setText(myResult.getOverview());
 
+    }
+
+    @OnClick(R.id.close_icon_imageview)
+    public void closeFragment(View view) {
+        getActivity().getSupportFragmentManager().popBackStack();
+        Log.d("TAG_X", "WHere you at?");
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
     }
 }

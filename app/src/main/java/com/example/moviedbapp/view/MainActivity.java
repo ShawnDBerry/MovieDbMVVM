@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.Movi
     Button movieSearchButton;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
